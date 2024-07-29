@@ -1,0 +1,73 @@
+/* 
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--primary-darkGreen);
+  color: var(--primary-white);
+} */
+
+body {
+  margin: 0;
+  font-family: 'Abel', 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--primary-darkGreen);
+  color: var(--primary-white);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Rubik+Mono+One&display=swap');
+
+.rubik {
+  font-family: "Rubik Mono One", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+.abel {
+  font-family: 'Abel', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+/* FONTS */
+
+:root {
+  --primary-darkGreen: #0B2D26;;
+  --primary-limeGreen: #E6F3B2;
+  --primary-gray: #2D2D2D;
+  --primary-white: #FFFFFF;
+
+  --actions-red: #FF5050;
+  --actions-gree: #D9FD53;
+
+  --secondary-lilac: #E6F3B2;
+  --secondary-brown: #C59276;
+}
+
+.logo a{
+  text-decoration: none;
+  color: var(--primary-limeGreen);
+  font-size: 1.2em;
+}
+.navLinks a{
+  text-decoration: none;
+  color: var(--actions-red);
+}
+.navLinks ul{
+  list-style-type: none;
+}
+
+.App {
+  text-align: center;
+}
+
+/* Nav */
+
