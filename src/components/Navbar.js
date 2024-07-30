@@ -1,7 +1,7 @@
 const Navbar = () => {
     return ( 
-        <nav>
-            <div className="logo rubik"><h1><a href="/">Planthora</a></h1></div>
+        <nav className="topNav">
+            <div className="logo rubik"><a href="/">Planthora</a></div>
             <div className="navLinks">
                 <ul>
                     <li><a href="/">Home</a></li>

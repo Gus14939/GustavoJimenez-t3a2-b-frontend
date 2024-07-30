@@ -6,7 +6,6 @@ function App() {
     <div className="App">
       <Navbar />
       <HomePage />
-      <h1>App Component</h1>
     </div>
   );
 }
