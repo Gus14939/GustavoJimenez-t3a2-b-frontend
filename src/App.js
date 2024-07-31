@@ -1,13 +1,13 @@
 import Navbar from './components/Navbar';
+import FooterComp from './components/Footer';
 import HomePage from './pages/HomePage';
 
 function App() {
   return (
     <div className="App">
-    <div className="try">
       <Navbar />
-    </div>
       <HomePage />
+      <FooterComp />
     </div>
   );
 }

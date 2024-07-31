@@ -43,11 +43,14 @@ h3{
   font-size: 1.6em;
 }
 
-h4, h5, h6{
+h4, h5{
   font-weight: 800;
 }
 h4{
   font-size: 1.3em;
+}
+h6{
+  font-weight: 700;
 }
 p{
   font-size: 1em;
@@ -87,9 +90,42 @@ button:active{
   --secondary-lilac: #E6F3B2;
   --secondary-brown: #C59276;
 }
+/* clear fix */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.footer{
+  max-width: 1920px; 
+  margin: 0 auto;
+}
+.footerContainer{
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6% 0% 5%;
+  width: 90%;
+}
+/* .footerContainer{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+} */
+.footer .footerLine{
+  width: 25%;
+  max-width: 25%;
+  margin: 0 4em;
+  border-top: solid var(--primary-limeGreen) 1px;
+}
 
 
 /* imports */
 @import url(./navStyles.css);
 @import url(./homeStyles.css);
+@import url(./listingStyles.css);
 

@@ -8,7 +8,7 @@
     max-width: 1920px;
     height: 100%;
     margin: 0 auto; */
-    height: 100vh;
+    /* height: 100vh; */
     background: url("../images/homeplant01.png") no-repeat center -100px;
     background-size: 1150px;
     background-position: 105% -100px;
