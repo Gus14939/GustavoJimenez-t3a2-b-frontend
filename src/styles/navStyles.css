@@ -1,0 +1,34 @@
+/* TOP NAV */
+.topNavContainer{
+  position: absolute;
+  max-width: 1920px;
+  width: 100%; /* element can shrink on smaller screens */
+  left: 50%;
+  transform: translateX(-50%);
+}
+.logo a{
+  text-decoration: none;
+  color: var(--primary-limeGreen);
+  font-size: 2em;
+}
+/* NAV */
+.topNav{
+  display: flex;
+  justify-content: space-between;
+  padding: 1em 2em;
+}
+.navLinks a{
+  text-decoration: none;
+  color: var(--actions-red);
+  font-size: 1.5em;
+}
+.navLinks a:hover{
+  text-decoration: none;
+  color: var(--actions-green);
+  font-size: 1.5em;
+}
+.navLinks ul{
+  list-style-type: none;
+  display: flex;
+  gap: 5px
+}

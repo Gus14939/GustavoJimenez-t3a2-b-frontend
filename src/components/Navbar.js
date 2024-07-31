@@ -1,7 +1,8 @@
 const Navbar = () => {
     return ( 
+        <div className="topNavContainer">
         <nav className="topNav">
-            <div className="logo rubik"><a href="/">Planthora</a></div>
+            <div className="logo"><a href="/">Planthora</a></div>
             <div className="navLinks">
                 <ul>
                     <li><a href="/">Home</a></li>
@@ -12,6 +13,7 @@ const Navbar = () => {
                 </ul>
             </div>
         </nav>
+        </div>
      );
 
 }

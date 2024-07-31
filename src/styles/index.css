@@ -1,37 +1,35 @@
-/* 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: var(--primary-darkGreen);
-  color: var(--primary-white);
-} */
 
 html {
   box-sizing: border-box;
-}
-*, *::before, *::after {
-  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   margin: 0;
+  padding: 0;
   font-family: 'Abel', 'Roboto', sans-serif;
   font-size: 24px;
   font-weight: 500;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background: url("../images/homeplant01.png") no-repeat;
+  background-size: 1300px;
+  background-position: 100% -100px; */
   background-color: var(--primary-darkGreen);
   color: var(--primary-white);
 }
 
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+
 /* FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
-h1, h2, h3, h4 ,h5, h6{
+
+h1, h2, h3, h4 ,h5, h6, button{
   font-family: 'Rubik', 'sans-serif';
   font-weight: 900;
 }
@@ -56,21 +54,24 @@ p{
   font-weight: 500;
 }
 
-.rubik {
-  font-family: 'Rubik', monospace;
-  font-weight: 400;
-  font-style: normal;
+button{
+  font-size: 1.4em;
+  margin: 0px;
+  padding: 0.6em 1.3em;
+  border-radius: 0.4em;
+  border: none;
+  cursor: pointer;
+  transition: border-radius 0.5s, transform 0.25s; 
 }
-.abel {
-  font-family: 'Abel', sans-serif;
-  font-weight: 400;
-  font-style: normal;
+button:hover{
+  border-radius: 0.8em;
 }
-
+button:active{
+  transform: scale(0.97);
+}
 
 .App {
   margin: 0 auto;
-  max-width: 1920px;
 }
 
 /* COLOUR VARS */
@@ -87,83 +88,8 @@ p{
   --secondary-brown: #C59276;
 }
 
-.logo a{
-  text-decoration: none;
-  color: var(--primary-limeGreen);
-  font-size: 2em;
-}
-/* NAV */
-.topNav{
-  display: flex;
-  justify-content: space-between;
-  padding: 1em 2em;
-}
-.navLinks a{
-  text-decoration: none;
-  color: var(--actions-red);
-  font-size: 1.5em;
-}
-.navLinks a:hover{
-  text-decoration: none;
-  color: var(--actions-green);
-  font-size: 1.5em;
-}
-.navLinks ul{
-  list-style-type: none;
-  display: flex;
-  gap: 5px
-}
 
-/* PLANT OF THE DAY */
-.plantOfTheDayContainer{
-  position: relative;
-  margin: 0 auto;
-  width: 90%;
-}
-.plantOfTheDay{
-  background-color: var(--primary-limeGreen);
-  border-radius: 2.5em;
-  overflow: hidden;
-}
-.plantOfTheDayText{
-  color: var(--primary-gray);
-  width: 45%;
-  padding: 2% 3%;
-}
-.plantOfTheDayText h1{
-  margin: 5px 0px 0px;
-}
-.plantOfTheDayText h2{
-  margin: 15px 0px 0px;
-}
-.plantOfTheDayText h3{
-  margin: 0px 0px 30px;
-}
-.plantOfTheDayText h4{
-  margin: 20px 0px 0px;
-}
-.plantOfTheDayText p{
-  margin: 0px 0px;
-  font-weight: 600;
-}
+/* imports */
+@import url(./navStyles.css);
+@import url(./homeStyles.css);
 
-.plantOfTheDayText p.users{
-  margin: 0px 0px;
-  font-weight: 900;
-  color: var(--actions-red);
-}
-
-.plantOfTheDayPic{
-  position: absolute;
-  right: 3%;
-  top: 12%;
-  background-color: var(--primary-limeGreen);
-  color: var(--primary-gray);
-  width: 50%;
-  height: 100%;
-  border-radius: 2.2em;
-  overflow: hidden;
-}
-.plantOfTheDayPic img{
-  width: 110%;
-}

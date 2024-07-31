@@ -1,10 +1,11 @@
 import React from 'react';
 import PlantOfTheDay from '../components/PlantOfTheDay';
+import HomeHeroIntro from '../components/HomeHeroIntro';
 
 const HomePage = () => {
     return (
         <div className='home'>
-            <h1>Homepage</h1>
+            <HomeHeroIntro />
             <PlantOfTheDay />
         </div>
     );
