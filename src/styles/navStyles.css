@@ -1,0 +1,64 @@
+/* TOP NAV */
+.topBar{ /* I need to find a way to use pos: abs */
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  height: 100px;
+}
+.quickfix{ /* not doing much at the moment */
+  position: relative;
+  margin: 0 auto;
+}
+.topBarContainer{
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  width: 90%;
+}
+.topBar .logo img{
+  width: 15em;  
+}
+.topBar .topSearch{
+  width: 3.5em; 
+}
+.navLinks ul{
+  list-style-type: none;
+  display: flex;
+  gap: 5px
+}
+
+.navLinks a{
+  text-decoration: none;
+  color: var(--actions-red);
+  font-size: 1.5em;
+}
+
+.topBarContainer a:hover{
+  filter: brightness(110%) saturate(250%) hue-rotate(28deg);
+}
+.topSearch a:hover{
+  filter: brightness(110%) saturate(250%) hue-rotate(28deg);
+} 
+
+
+/* NAV */
+/* .topNav{
+} */
+/* .navLinks a{
+  text-decoration: none;
+  color: var(--actions-red);
+  font-size: 1.5em;
+}
+.navLinks a:hover{
+  text-decoration: none;
+  color: var(--actions-green);
+  font-size: 1.5em;
+}
+.navLinks ul{
+  list-style-type: none;
+  display: flex;
+  gap: 5px
+} */

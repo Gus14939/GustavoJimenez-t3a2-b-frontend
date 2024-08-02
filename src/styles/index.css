@@ -1,73 +1,124 @@
-/* 
-body {
+
+html {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: var(--primary-darkGreen);
-  color: var(--primary-white);
-} */
+  padding: 0;
+}
 
 body {
   margin: 0;
+  padding: 0;
   font-family: 'Abel', 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background: url("../images/homeplant01.png") no-repeat;
+  background-size: 1300px;
+  background-position: 100% -100px; */
   background-color: var(--primary-darkGreen);
   color: var(--primary-white);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*, *::before, *::after {
+  box-sizing: inherit;
 }
+
 
 /* FONTS */
-@import url('https://fonts.googleapis.com/css2?family=Abel&family=Rubik+Mono+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
-.rubik {
-  font-family: "Rubik Mono One", monospace;
-  font-weight: 400;
-  font-style: normal;
-}
-.abel {
-  font-family: 'Abel', sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-/* FONTS */
 
+h1, h2, h3, h4 ,h5, h6, button{
+  font-family: 'Rubik', 'sans-serif';
+  font-weight: 900;
+}
+h1{
+  font-size: 3.4em;
+}
+h2{
+  font-size: 2.7em;
+}
+h3{
+  font-size: 1.6em;
+}
+
+h4, h5{
+  font-weight: 800;
+}
+h4{
+  font-size: 1.3em;
+}
+h6{
+  font-weight: 700;
+}
+p{
+  font-size: 1em;
+  font-weight: 500;
+}
+
+button{
+  font-size: 1.4em;
+  margin: 0px;
+  padding: 0.6em 1.3em;
+  border-radius: 0.4em;
+  border: none;
+  cursor: pointer;
+  transition: border-radius 0.5s, transform 0.25s; 
+}
+button:hover{
+  border-radius: 0.8em;
+}
+button:active{
+  transform: scale(0.97);
+}
+
+.App {
+  margin: 0 auto;
+}
+
+/* COLOUR VARS */
 :root {
   --primary-darkGreen: #0B2D26;;
   --primary-limeGreen: #E6F3B2;
-  --primary-gray: #2D2D2D;
+  --primary-gray: #728990;
+
+  --primary-darkGray: #2D2D2D;
   --primary-white: #FFFFFF;
 
   --actions-red: #FF5050;
-  --actions-gree: #D9FD53;
+  --actions-green: #D9FD53;
 
   --secondary-lilac: #E6F3B2;
   --secondary-brown: #C59276;
 }
-
-.logo a{
-  text-decoration: none;
-  color: var(--primary-limeGreen);
-  font-size: 1.2em;
-}
-.navLinks a{
-  text-decoration: none;
-  color: var(--actions-red);
-}
-.navLinks ul{
-  list-style-type: none;
+/* clear fix */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 
-.App {
-  text-align: center;
+/* to be replaced */
+
+.searchies{
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 140px;
+  background-color: var(--primary-white);
+  border-radius: 100px;
+  padding: 5px;
+  color: var(--actions-red)
+}
+.searchies h3{
+  margin: 0;
+  padding: 5px 40px;
+  color: var(--actions-red)
 }
 
-/* Nav */
+/* imports */
+@import url(./navStyles.css);
+@import url(./homeStyles.css);
+@import url(./listingStyles.css);
+@import url(./footer.css);
 

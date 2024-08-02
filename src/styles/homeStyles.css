@@ -1,0 +1,102 @@
+/* HOME PAGE */
+
+.home{
+  max-width: 1920px; 
+  margin: 0 auto;
+    /* position: absolute;
+    background: url("../images/homeplant01.png") no-repeat;
+    max-width: 1920px;
+    height: 100%;
+    margin: 0 auto; */
+    /* height: 100vh; */
+    background: url("../images/homeplant01.png") no-repeat center -100px;
+    background-size: 1150px;
+    background-position: 105% -100px;
+}
+
+/* HOME HERO INTRO */
+
+.HomeHeroContainer{
+    position: relative;
+    margin: 0 auto;
+    padding: 6% 0% 5%;
+    width: 90%;
+  }
+  .HomeHeroContainer h1{
+    margin-bottom: 20px;
+  }
+  .HomeHeroContainer h3{
+    margin: 0px;
+    color: var(--primary-limeGreen);
+  }
+  .HomeHeroButtons{
+    padding: 4% 4% 0% ;
+  }
+  .HomeHeroButtons button.reg{
+    background-color: var(--actions-red);
+    color: var(--primary-white);
+    margin-right: 3%;
+  }
+  .HomeHeroButtons button.log{
+    background-color: var(--actions-green);
+  }
+  
+  
+  /* PLANT OF THE DAY */
+  .plantOfTheDayContainer{
+    position: relative;
+    margin: 0 auto;
+    width: 90%;
+  }
+  .plantOfTheDay{
+    background-color: var(--primary-limeGreen);
+    border-radius: 2.5em;
+    overflow: hidden;
+  }
+  .plantOfTheDayText{
+    color: var(--primary-darkGray);
+    width: 50%;
+    padding: 2% 3%;
+  }
+  .plantOfTheDayText h1{
+    margin: 5px 0px 0px;
+  }
+  .plantOfTheDayText h2{
+    margin: 15px 0px 0px;
+  }
+  .plantOfTheDayText h3{
+    margin: 0px 0px 30px;
+  }
+  .plantOfTheDayText h4{
+    margin: 20px 0px 0px;
+  }
+  .plantOfTheDayText p{
+    margin: 0px 0px;
+    font-weight: 600;
+  }
+  
+  .plantOfTheDayText p.users{
+    margin: 0px 0px;
+    font-weight: 900;
+    color: var(--actions-red);
+  }
+  
+  .plantOfTheDayPic{
+    position: absolute;
+    right: 3%;
+    top: 12%;
+    background-color: var(--primary-limeGreen);
+    color: var(--primary-gray);
+    width: 48%;
+    height: 100%;
+    border-radius: 2.2em;
+    overflow: hidden;
+  }
+  .plantOfTheDayPic img{
+    width: 120%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
