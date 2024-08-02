@@ -39,6 +39,66 @@ code {
 }
 /* FONTS */
 
+<<<<<<< Updated upstream
+=======
+h1, h2, h3, h4 ,h5, h6, button, input{
+  font-family: 'Rubik', 'sans-serif';
+  font-weight: 900;
+}
+h1{
+  font-size: 3.4em;
+}
+h2{
+  font-size: 2.7em;
+}
+h3{
+  font-size: 1.6em;
+}
+
+h4, h5{
+  font-weight: 800;
+}
+h4{
+  font-size: 1.3em;
+}
+h6{
+  font-weight: 700;
+}
+p{
+  font-size: 1em;
+  font-weight: 500;
+}
+button{
+  font-size: 1.4em;
+  margin: 0px;
+  padding: 0.6em 1.3em;
+  border-radius: 0.4em;
+  border: none;
+  cursor: pointer;
+  transition: border-radius 0.5s, transform 0.25s; 
+}
+button:hover{
+  border-radius: 0.8em;
+}
+button:active{
+  transform: scale(0.97);
+}
+input{
+  font-weight: 800;
+}
+
+.App {
+  max-width: 1920px; 
+  margin: 0 auto;
+}
+.AppContainer{
+  position: relative;
+  margin: 0 auto;
+  width: 90%;
+}
+
+/* COLOUR VARS */
+>>>>>>> Stashed changes
 :root {
   --primary-darkGreen: #0B2D26;;
   --primary-limeGreen: #E6F3B2;
@@ -65,9 +125,13 @@ code {
   list-style-type: none;
 }
 
+<<<<<<< Updated upstream
 .App {
   text-align: center;
 }
+=======
+
+>>>>>>> Stashed changes
 
 /* Nav */
 
