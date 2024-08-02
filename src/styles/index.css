@@ -72,6 +72,20 @@ button:hover{
 button:active{
   transform: scale(0.97);
 }
+input{
+  font-weight: 800;
+}
+
+.App {
+  max-width: 1920px; 
+  margin: 0 auto;
+}
+.AppContainer{
+  position: relative;
+  margin: 0 auto;
+  width: 90%;
+}
+
 /* FONTS */
 
 :root {
@@ -106,5 +120,7 @@ button:active{
   text-align: center;
 }
 
-/* Nav */
-
+@import url(./navStyles.css);
+@import url(./homeStyles.css);
+@import url(./listingStyles.css);
+@import url(./footer.css);

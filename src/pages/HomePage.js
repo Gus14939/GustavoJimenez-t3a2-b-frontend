@@ -9,7 +9,9 @@ const HomePage = () => {
             <HomeHeroIntro />
             <PlantOfTheDay />
             <div className='searchies'>
-                <h3>Search plant</h3>
+            <form>
+                <input type="text" name='search' placeholder='Search plants' />
+            </form>
             </div>
             <Listings />
         </div>
