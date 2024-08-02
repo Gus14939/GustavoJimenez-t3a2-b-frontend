@@ -1,23 +1,53 @@
 /* TOP NAV */
-.topNavContainer{
-  position: absolute;
+.topBar{ /* I need to find a way to use pos: abs */
+  width: 100%;
   max-width: 1920px;
-  width: 100%; /* element can shrink on smaller screens */
-  left: 50%;
-  transform: translateX(-50%);
+  margin: 0 auto;
+  height: 100px;
 }
-.logo a{
-  text-decoration: none;
-  color: var(--primary-limeGreen);
-  font-size: 2em;
+.quickfix{ /* not doing much at the moment */
+  position: relative;
+  margin: 0 auto;
 }
-/* NAV */
-.topNav{
+.topBarContainer{
+  position: relative;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  padding: 1em 2em;
+  align-items: center;
+  padding: 0;
+  width: 90%;
 }
+.topBar .logo img{
+  width: 15em;  
+}
+.topBar .topSearch{
+  width: 3.5em; 
+}
+.navLinks ul{
+  list-style-type: none;
+  display: flex;
+  gap: 5px
+}
+
 .navLinks a{
+  text-decoration: none;
+  color: var(--actions-red);
+  font-size: 1.5em;
+}
+
+.topBarContainer a:hover{
+  filter: brightness(110%) saturate(250%) hue-rotate(28deg);
+}
+.topSearch a:hover{
+  filter: brightness(110%) saturate(250%) hue-rotate(28deg);
+} 
+
+
+/* NAV */
+/* .topNav{
+} */
+/* .navLinks a{
   text-decoration: none;
   color: var(--actions-red);
   font-size: 1.5em;
@@ -31,4 +61,4 @@
   list-style-type: none;
   display: flex;
   gap: 5px
-}
+} */

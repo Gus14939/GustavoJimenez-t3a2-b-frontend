@@ -1,15 +1,22 @@
-import React from 'react';
+import assets from "../images/assets";
+
+import React from "react";
 
 const FooterComp = () => {
-    return (
-        <div className='footer'>
-            <div className='footerContainer clearfix'>
-                <div className='footerLine'></div>
-                <div className='footerLogo'><h1>Planthora</h1></div>
-                <div className='footerLine'></div>
-            </div>
+  return (
+    <div className="footer">
+      <div className="footerContainer">
+        <div className="footerLine"></div>
+
+        <div className="logo">
+          <a href="/">
+            <img src={assets.logo_Planthora} alt="Logo" />
+          </a>
         </div>
-    );
-}
+        <div className="footerLine"></div>
+      </div>
+    </div>
+  );
+};
 
 export default FooterComp;

@@ -1,4 +1,6 @@
+import assets from '../images/assets';
 import React, { useEffect, useState } from "react";
+
 
 const API_KEY = "key=sk-REKG66a5179656da26352";
 const guideAPIurl = "https://perenual.com/api/species/details/";
@@ -67,8 +69,16 @@ function ListingComponent() {
                   <p>**dateCreated**</p>
                 </div>
               </div>
-              <div>
-                <span>O</span> <span>O</span> <span>O</span>
+              <div className="listingActions">
+                <div className="listingMessages">
+                  <img src={assets.icon_messages} alt="" />
+                </div>
+                <div className="listingLocation">
+                  <img src={assets.icon_location} alt="" />
+                </div>
+                <div className="listingWishlist">
+                  <a href="/"><img src={assets.icon_redHeart} alt="" /></a>
+                </div>
               </div>
             </div>
           </div>

@@ -8,6 +8,9 @@ const HomePage = () => {
         <div className='home'>
             <HomeHeroIntro />
             <PlantOfTheDay />
+            <div className='searchies'>
+                <h3>Search plant</h3>
+            </div>
             <Listings />
         </div>
     );

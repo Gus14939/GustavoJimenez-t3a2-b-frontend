@@ -81,7 +81,9 @@ button:active{
 :root {
   --primary-darkGreen: #0B2D26;;
   --primary-limeGreen: #E6F3B2;
-  --primary-gray: #353535; /* #2D2D2D */
+  --primary-gray: #728990;
+
+  --primary-darkGray: #2D2D2D;
   --primary-white: #FFFFFF;
 
   --actions-red: #FF5050;
@@ -97,35 +99,26 @@ button:active{
   display: table;
 }
 
-.footer{
-  max-width: 1920px; 
-  margin: 0 auto;
-}
-.footerContainer{
-  position: relative;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 6% 0% 5%;
-  width: 90%;
-}
-/* .footerContainer{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 90%;
-} */
-.footer .footerLine{
-  width: 25%;
-  max-width: 25%;
-  margin: 0 4em;
-  border-top: solid var(--primary-limeGreen) 1px;
-}
+/* to be replaced */
 
+.searchies{
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 140px;
+  background-color: var(--primary-white);
+  border-radius: 100px;
+  padding: 5px;
+  color: var(--actions-red)
+}
+.searchies h3{
+  margin: 0;
+  padding: 5px 40px;
+  color: var(--actions-red)
+}
 
 /* imports */
 @import url(./navStyles.css);
 @import url(./homeStyles.css);
 @import url(./listingStyles.css);
+@import url(./footer.css);
 
