@@ -4,7 +4,9 @@ import React, { useEffect, useState } from "react";
 
 
 
+// const API_KEY = process.env.REACT_APP_PERENUAL_API_KEY;
 const API_KEY = "sk-REKG66a5179656da26352";
+console.log('API Key:', API_KEY);
 const guideAPIurl = "https://perenual.com/api/species/details/";
 
 function ListingComponent() {

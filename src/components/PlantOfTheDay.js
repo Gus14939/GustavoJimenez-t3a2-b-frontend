@@ -1,28 +1,77 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
+const API_KEY = "sk-REKG66a5179656da26352";
+console.log("API Key:", API_KEY);
+const guideAPIurl = "https://perenual.com/api/species/details/";
 
 const PlantOfTheDay = () => {
-    const pic = "https://perenual.com/storage/species_image/5257_monstera_deliciosa/og/4630938853_623dc33137_b.jpg"
-    return (
-        <>
-        <div className='plantOfTheDayContainer'>
-            <div className='plantOfTheDay'>
-                <div className='plantOfTheDayText'>
-                    <h1>Plant of the day</h1>
-                    <h2>Monstera deliciosa</h2>
-                    <h3>fruit salad plant, Swiss cheese</h3>
-                    <p >Ornamental tropical feature plant for indoors or out, with large decorative foliage and sweet fruit on mature plants. Plant in a pot and bring indoors to create a tropical luxe mood.PLEASE NOTE: We propagate this once a year and new stock is ready NOW until we sell out. Then thats it until next year.</p>
-                    <h4>See the users that have this plant</h4>
-                    <p className='users'>@user1001 / @user1002 / @user1003 / @user1004 / </p>
-                </div>
-            
-            </div>
+  const [passID, setPassID] = useState(() =>
+    Math.floor(Math.random() * 500 + 1)
+  );
+  const [data, setData] = useState(null);
 
-            <div className='plantOfTheDayPic'>
-                <img src={pic} alt="this" />
+  const getPlantica = async () => {
+    try {
+      let result = await fetch(`${guideAPIurl}${passID}?key=${API_KEY}`).then(
+        (response) => response.json()
+      );
+      setData(result);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  useEffect(() => {
+    getPlantica();
+  }, [passID]);
+
+  const truncateText = (text, maxLength) => {
+    return text.length > maxLength ? text.slice(0, maxLength) + "..." : text;
+  };
+
+  useEffect(() => {
+    if (data) {
+      const titleElement = document.querySelector('.plantOfTheDayText h2');
+      const descriptionElement = document.querySelector(".plantOfTheDayText p");
+
+      if (titleElement) {
+        titleElement.innerText = truncateText(data.common_name, 16); // Adjust maxLength as needed
+      }
+
+      if (descriptionElement) {
+        descriptionElement.innerText = truncateText(data.description, 300); // Adjust maxLength as needed
+      }
+    }
+  }, [data]);
+
+  return (
+    <>
+      {data && (
+        <div className="plantOfTheDayContainer">
+          <div className="plantOfTheDay">
+            <div className="plantOfTheDayText">
+              <h1>Plant of the day</h1>
+              <h2 title={data.common_name}>{data.common_name}</h2>
+              <h3>{data.scientific_name}</h3>
+              <p>{data.description}</p>
+              <h4>See the users that have this plant</h4>
+              <p className="users">
+                @user1001 / @user1002 / @user1003 / @user1004 /{" "}
+              </p>
             </div>
+          </div>
+
+          <div className="plantOfTheDayPic">
+          <Link to={'/details'}><img
+              src={data.default_image.regular_url}
+              alt={data.scientific_name}
+            /></Link>
+          </div>
         </div>
-        </>
-    );
-}
+      )}
+    </>
+  );
+};
 
 export default PlantOfTheDay;

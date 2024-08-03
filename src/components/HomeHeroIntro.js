@@ -1,9 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const HomeHeroIntro = () => {
-
-    const handleRegister = () => {console.log("register")}
-    const handleLogin = () => {console.log("login")}
 
     return (
         <>
@@ -11,8 +9,12 @@ const HomeHeroIntro = () => {
             <h1>Welcome to the <br /> Plant Swap Community</h1>
             <h3>Donate, Swap, Adopt & Discuss Plants!</h3>
             <div className='HomeHeroButtons'>
-                <button onClick={handleRegister} className='reg'>Free Registration</button>
-                <button onClick={handleLogin} className='log'>Login</button>
+                <Link to={'/signup'}>
+                    <button className='reg'>Free Registration</button>
+                </Link>
+                <Link to={'/login'}>
+                    <button className='log'>Login</button>
+                </Link>
             </div>
         </div>
         </>

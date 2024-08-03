@@ -29,7 +29,7 @@ body {
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 
-h1, h2, h3, h4 ,h5, h6, button{
+h1, h2, h3, h4 ,h5, h6, button, input{
   font-family: 'Rubik', 'sans-serif';
   font-weight: 900;
 }

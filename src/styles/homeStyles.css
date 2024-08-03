@@ -51,6 +51,7 @@
   overflow: hidden;
 }
 .plantOfTheDayText{
+  text-align: left;
   color: var(--primary-darkGray);
   width: 50%;
   padding: 2% 3%;
@@ -59,10 +60,11 @@
   margin: 5px 0px 0px;
 }
 .plantOfTheDayText h2{
-  margin: 15px 0px 0px;
+  margin: 15px 0px 3px;
+  line-height: 1em;
 }
 .plantOfTheDayText h3{
-  margin: 0px 0px 30px;
+  margin: 0px 0px 20px;
 }
 .plantOfTheDayText h4{
   margin: 20px 0px 0px;
@@ -88,7 +90,12 @@
   height: 100%;
   border-radius: 2.2em;
   overflow: hidden;
+  transition: border-radius 0.3s;
 }
+.plantOfTheDayPic:hover{
+  border-radius: 3em;
+}
+
 .plantOfTheDayPic img{
   width: 120%;
   position: absolute;
