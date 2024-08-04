@@ -106,12 +106,12 @@
 
 /* to be replaced */
 .searchies{
-  width: 60%;
-  margin: 0 auto;
+  width: 100%;
   margin-top: 130px;
+  text-align: center;
 }
 .searchies input{
-  width: 100%;
+  width: 60%;
   padding: 20px 30px;
   font-size: 1.3em;
   color: var(--actions-red);
@@ -121,7 +121,7 @@
   background-size: 4.5%;
   transition: background-size 0.2s;
 }
-input:focus{
+.searchies input:focus{
   background: var(--primary-limeGreen) url("../images/icon_search_red.svg") no-repeat right 25px center;
   background-size: 5%;
   border: none;

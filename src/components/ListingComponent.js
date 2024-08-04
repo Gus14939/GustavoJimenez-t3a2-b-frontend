@@ -47,7 +47,7 @@ function ListingComponent() {
   }, [data]);
 
   return (
-    <div className="listing">
+    <div>
       {data && (
         <div className="listing">
           <div className="imgContainer">

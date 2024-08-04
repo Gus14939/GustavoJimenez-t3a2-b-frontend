@@ -2,6 +2,7 @@ import React from 'react';
 import PlantOfTheDay from '../components/PlantOfTheDay';
 import HomeHeroIntro from '../components/HomeHeroIntro';
 import Listings from '../components/Listings';
+import SearchComponent from '../components/SearchComponent';
 
 const HomePage = () => {
     return (
@@ -9,9 +10,7 @@ const HomePage = () => {
             <HomeHeroIntro />
             <PlantOfTheDay />
             <div className='searchies'>
-            <form>
-                <input type="text" name='search' placeholder='Search plants' />
-            </form>
+            <SearchComponent />
             </div>
             <Listings />
         </div>

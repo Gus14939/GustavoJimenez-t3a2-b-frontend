@@ -1,11 +1,31 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const ProfileLogin = () => {
-    return (
-        <div>
-            <h1>Profile Login</h1>
+  const Planthora_API = "http://localhost:3333/profile/login";
+
+  return (
+    <div>
+      <div className="userForms">
+        <h1>Login</h1>
+        <form action="">
+          <div className="field">
+            <label>Username:</label>
+            <input type="text" name="username" required />
+          </div>
+          <div className="field">
+            <label>Password:</label>
+            <input type="password" name="password" required />
+          </div>
+        </form>
+        <div className="toggleSingupLogin">
+          <h4>
+            Are you new to Planthora?<br /> <Link to={"/profile/signup"}>Create an account</Link>
+          </h4>
         </div>
-    );
-}
+      </div>
+    </div>
+  );
+};
 
 export default ProfileLogin;

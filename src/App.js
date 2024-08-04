@@ -30,9 +30,9 @@ function App() {
             <Route path='/listingsPage' element={<Listings />} />
           
           
-            <Route path='/login' element={<ProfileLogin />} />
-            <Route path='/signup' element={<ProfileSignup />} />
             <Route path='/profile' element={<ProfileView />} />
+            <Route path='/profile/login' element={<ProfileLogin />} />
+            <Route path='/profile/signup' element={<ProfileSignup />} />
             <Route path='/faq' element={<FAQPage />} />
             <Route path='/about' element={<AboutPage />} />
           

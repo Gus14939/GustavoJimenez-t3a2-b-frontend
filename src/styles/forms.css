@@ -1,0 +1,52 @@
+.userForms{
+  width: 60%; 
+  max-width: 45%; 
+  margin: 0 auto;
+  text-align: left;
+  /* background-color: var(--primary-limeGreen); */
+}
+.userForms .field{
+  margin: 1em ;
+}
+.userForms label{
+  margin: 1em;
+}
+.userForms input{
+  width: 100%;
+  margin-top: 3px;
+  padding: 15px 30px;
+  font-size: 1.1em;
+  color: var(--actions-red);
+  border: none;
+  border-radius: 100px;
+  background-color: var(--primary-white);
+  background-size: 4.5%;
+  transition: background-color 1s;
+}
+.userForms input:focus{
+  background-color: var(--primary-limeGreen);
+  border: none;
+  outline: 0;
+}
+.userForms input::placeholder {
+  font-size: 1.2em;
+  color: var(--actions-red)
+}
+.userForms .signupButton {
+  margin-top: 2.5em;
+  text-align: center;
+}
+.userForms .signupButton button {
+  padding: 0.4em 3em;
+  border-radius: 100px;
+  background-color: var(--actions-green);
+  color: var(--actions-red)
+}
+.userForms .toggleSingupLogin {
+  text-align: center;
+  padding: 0.4em 3em;
+}
+.userForms .toggleSingupLogin a{
+  text-decoration: none;
+  color: var(--actions-green);
+}

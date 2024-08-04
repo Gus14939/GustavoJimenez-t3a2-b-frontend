@@ -29,7 +29,7 @@ body {
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 
-h1, h2, h3, h4 ,h5, h6, button, input{
+h1, h2, h3, h4 ,h5, h6, button, input, label{
   font-family: 'Rubik', 'sans-serif';
   font-weight: 900;
 }
@@ -72,7 +72,7 @@ button:hover{
 button:active{
   transform: scale(0.97);
 }
-input{
+input, label{
   font-weight: 800;
 }
 
@@ -123,4 +123,6 @@ input{
 @import url(./navStyles.css);
 @import url(./homeStyles.css);
 @import url(./listingStyles.css);
+@import url(./profileStyles.css);
+@import url(./forms.css);
 @import url(./footer.css);

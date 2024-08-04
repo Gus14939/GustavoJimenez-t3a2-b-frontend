@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
+import SearchComponent from "../../components/SearchComponent";
+import MyPostsComponent from "../../components/MyPostsComponent";
 
-// const Planthora_API = "http://localhost:3333/profiles/all";
-const Planthora_API = "https://gustavojimenez-t3a2-b-backend.onrender.com/profiles/all";
+const Planthora_API = "http://localhost:3333/profile/all";
+// const Planthora_API = "https://gustavojimenez-t3a2-b-backend.onrender.com/profiles/all";
 
 const ProfileView = () => {
   const [data, setData] = useState([]);
@@ -25,11 +27,28 @@ const ProfileView = () => {
 
   return (
     <div>
-      <h1>Hello</h1>
+    <div className='ProfileContainer'>
+
+      <h1>My Posts</h1>
+      <div className="myPostslisting">
+        <MyPostsComponent />
+        <MyPostsComponent />
+      </div>
+      all my posts should be here
+
+      <h1>Wishlist</h1>
+      wishlist is here
+      <div className='searchies'>
+        <SearchComponent />
+      </div>
+
+      <h1>History</h1>
+      history goes here
+
       {data.length > 0 ? (
-        data.map((profile) => (
+        data.slice(0,2).map((profile) => (
           <div key={profile._id}>
-            <h1 title={profile.name}>{profile.lastname}</h1>
+            <h3 title={profile.name}>{profile.lastname}</h3>
             <p>Username: {profile.username}</p>
             <p>Email: {profile.email}</p>
             <p>Favorite Plant: {profile.favouritePlant}</p>
@@ -38,6 +57,7 @@ const ProfileView = () => {
       ) : (
         <p>Loading...</p>
       )}
+    </div>
     </div>
   );
 };
