@@ -19,7 +19,7 @@ const ProfileLogin = () => {
           </div>
 
           <div className="formButton">
-            <button type="submit">Post it!</button>
+            <button type="submit">Login</button>
           </div>
         </form>
         <div className="toggleSingupLogin">
