@@ -3,7 +3,7 @@ import React from 'react';
 const AboutPage = () => {
     const tavo = "Planthora beibi";
     return (
-        <div>
+        <div className='noHomeContainer'>
             <h1>About Page {tavo}</h1>
         </div>
     );

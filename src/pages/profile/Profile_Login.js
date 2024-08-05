@@ -5,7 +5,7 @@ const ProfileLogin = () => {
   const Planthora_API = "http://localhost:3333/profile/login";
 
   return (
-    <div>
+    <div className="noHomeContainer">
       <div className="userForms">
         <h1>Login</h1>
         <form action="">
@@ -16,6 +16,10 @@ const ProfileLogin = () => {
           <div className="field">
             <label>Password:</label>
             <input type="password" name="password" required />
+          </div>
+
+          <div className="formButton">
+            <button type="submit">Post it!</button>
           </div>
         </form>
         <div className="toggleSingupLogin">

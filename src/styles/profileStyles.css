@@ -14,7 +14,7 @@
 
 .myPostsContainer{
   position: relative;
-  margin: 2% 0;
+  margin: 0 0 4%;
 }
 /* each myPosts component */
 .myPosts{
@@ -45,7 +45,7 @@
   width: 90%;
   background-color: var(--primary-gray);
   border-radius: 1em;
-  padding: 2% 5% 2% 12%;
+  padding: 1.5% 5% 1.5% 12%;
   margin: 50px 0px 50px -10%;
   text-align: left;
 }
@@ -67,6 +67,9 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.myPostsContent p{
+  margin: 0.6em 0px;
 }
 .myPostsActions{
   height: 50px;

@@ -1,9 +1,14 @@
 import React from 'react';
+import ListingDetailsComponent from '../../components/ListingDetailsComponent';
 
 const PlantDetails = () => {
     return (
-        <div>
-            <h1>Listing - plant details</h1>
+        <div className='noHomeContainer'>
+                <div className="listingDetails">
+                    <div className="listingsContainer">
+                        <ListingDetailsComponent />
+                    </div>
+                </div>
         </div>
     );
 }

@@ -10,15 +10,15 @@
     margin: 0 auto; */
     /* height: 100vh; */
     background: url("../images/homeplant01.png") no-repeat center -100px;
-    background-size: 1150px;
-    background-position: 105% -100px;
+    background-size: 1140px;
+    background-position: 108% -100px;
 }
 
 /* HOME HERO INTRO */
 
 .HomeHeroContainer{
   position: relative;
-  padding: 6% 0% 5%;
+  padding: 6% 0% 6%;
   text-align: left;
 }
 .HomeHeroContainer h1{
@@ -88,12 +88,12 @@
   color: var(--primary-gray);
   width: 48%;
   height: 100%;
-  border-radius: 2.2em;
+  border-radius: 1.7em;
   overflow: hidden;
   transition: border-radius 0.3s;
 }
 .plantOfTheDayPic:hover{
-  border-radius: 3em;
+  border-radius: 2.2em;
 }
 
 .plantOfTheDayPic img{

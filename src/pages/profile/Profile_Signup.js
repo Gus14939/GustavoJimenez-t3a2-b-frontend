@@ -5,7 +5,7 @@ const ProfileSignup = () => {
   const Planthora_API = "http://localhost:3333/profile/signup";
 
   return (
-    <div>
+    <div className="noHomeContainer">
       <div className="userForms">
         <h1>Signup</h1>
         <form action="">
@@ -41,7 +41,8 @@ const ProfileSignup = () => {
             <label>Favourite plant:</label>
             <input type="type" name="email" required />
           </div>
-          <div className="signupButton">
+          
+          <div className="formButton">
             <button type="submit">Signup</button>
           </div>
         </form>

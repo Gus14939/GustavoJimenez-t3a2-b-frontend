@@ -10,9 +10,11 @@ const HomePage = () => {
             <HomeHeroIntro />
             <PlantOfTheDay />
             <div className='searchies'>
-            <SearchComponent />
+                <SearchComponent />
             </div>
-            <Listings />
+            <div className="homeListings">
+                <Listings />
+            </div>
         </div>
     );
 }

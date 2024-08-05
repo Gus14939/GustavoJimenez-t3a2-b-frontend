@@ -25,6 +25,7 @@ function App() {
         <div className="AppContainer">
           <Routes>
             <Route path='/' element={<HomePage />} />
+            
             <Route path='/postYourPlant' element={<PostYourPlant />} />
             <Route path='/plantDetails' element={<PlantDetails />} />
             <Route path='/listingsPage' element={<Listings />} />

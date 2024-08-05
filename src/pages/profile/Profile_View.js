@@ -26,7 +26,7 @@ const ProfileView = () => {
   console.log(data, "is data loading");
 
   return (
-    <div>
+    <div className="noHomeContainer">
     <div className='ProfileContainer'>
 
       <h1>My Posts</h1>

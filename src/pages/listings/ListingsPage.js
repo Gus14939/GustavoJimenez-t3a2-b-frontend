@@ -2,7 +2,7 @@ import React from 'react';
 
 const Listings = () => {
     return (
-        <div>
+        <div className='noHomeContainer'>
             <h1>Listings Page</h1>
         </div>
     );
