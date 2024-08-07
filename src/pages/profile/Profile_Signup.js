@@ -3,63 +3,61 @@ import { Link, useNavigate } from "react-router-dom";
 
 
 const ProfileSignup = () => {
-  const Planthora_signup = "http://localhost:3333/profile/signup";
-
-  const navigate = useNavigate();
-
   const [formData, setFormData] = useState({
     name: "",
     lastname: "",
     username: "",
     email: "",
     password: "",
-    suburb: "",
-    postcode: "",
+    address:{
+      suburb: "",
+      postcode: "",
+    },
     favouritePlant: ""
   });
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
-  };
+  const navigate = useNavigate();
+
+const handleInputChange = (e) => {
+  const { name, value } = e.target;
+
+  if (name === "suburb" || name === "postcode") {
+    setFormData((prevData) => ({
+      ...prevData,
+      address: {
+        ...prevData.address,
+        [name]: value,
+      },
+    }));
+  } else {
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  }
+};
 
   const handleSubmit = async (e) => {
     e.preventDefault();
   
     try {
-      console.log("Form Data:", formData); // Log formData for debugging
-      
-      const reMapForNesting = {
-        name: formData.name,
-        lastname: formData.lastname,
-        username: formData.username,
-        email: formData.email,
-        password: formData.password,
-        address: {
-          postcode: formData.postcode,
-          suburb: formData.suburb,
-        },
-        favouritePlant: formData.favouritePlant
-      }
-  
-      const response = await fetch(Planthora_signup, {
+      const response = await fetch("http://localhost:3333/profile/signup",{
+      // console.log("Form Data:", formData); // Log formData for debugging
+
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify(reMapForNesting)
+        body: JSON.stringify(formData)
       });
   
-      // if (!response.ok) {
-      //   throw new Error("Signup failed");
-      // }
+      if (!response.ok) {
+        throw new Error("Signup failed");
+      }
   
       const data = await response.json();
-      console.log("Signup successful:", data); // Log successful response data
-      // Optionally, you can redirect to another page upon successful signup
+      console.log("Signup successful:", data); 
+
       navigate('/profile/login');
     } catch (error) {
       console.error("Signup failed:", error);
@@ -101,7 +99,7 @@ const ProfileSignup = () => {
           </div>
           <div className="field">
             <label>Favourite plant:</label>
-            <input type="text" name="favouritePlant" value={formData.favouritePlant} onChange={handleInputChange} required />
+            <input type="text" name="favouritePlant" value={formData.favouritePlant} onChange={handleInputChange} />
           </div>
           
           <div className="formButton">

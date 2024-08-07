@@ -28,8 +28,8 @@ function App() {
             <Route path='/' element={<HomePage />} />
             
             <Route path='/posts/postYourPlant' element={<PostYourPlant />} />
-            <Route path='/posts//plantDetails' element={<PlantDetails />} />
-            <Route path='/posts//listingsPage' element={<Listings />} />
+            <Route path='/posts/postDetails/:id' element={<PlantDetails />} />
+            <Route path='/posts/listingsPage' element={<Listings />} />
           
           
             <Route path='/profile' element={<ProfileView />} />
