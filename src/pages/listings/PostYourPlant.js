@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-// import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 // const Planthora_API = "http://localhost:3333/posts";
 
 const PostYourPlant = () => {
 
+    // functionality for  category
     const [freeChecked, setFreeChecked] = useState(false);
     const [swapChecked, setSwapChecked] = useState(false);
     const [wantedChecked, setWantedChecked] = useState(false);
@@ -33,22 +34,24 @@ const PostYourPlant = () => {
     }, [wantedChecked]);
 
 
+
     return (
         <div className="noHomeContainer">
     <div className="userForms">
     <h1>Post Your Plant</h1>
-      <form action="">
+      <form action="" onSubmit={handleSubmit}>
         <div className="field">
           <label>Title of your post:</label>
-          <input type="text" name="username" required />
+          <input type="text" name="title" value={formData.title} onChange={handleInputChange} required />
         </div>
         <div className="field">
           <label>Name of the plant:</label>
-          <input type="text" name="password" required />
+          <input type="text" name="plantName" value={formData.plantName} onChange={handleInputChange} required />
+
         </div>
         <div className="field">
           <label>Description:</label>
-          <textarea name="message"></textarea>
+          <textarea name="description" value={formData.description} onChange={handleInputChange} required></textarea>
         </div>
         
         

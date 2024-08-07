@@ -1,7 +1,7 @@
 
 import assets from '../images/assets';
 import React, { useEffect, useState } from "react";
-
+import { useNavigate } from 'react-router-dom';
 
 
 // const API_KEY = process.env.REACT_APP_PERENUAL_API_KEY;
@@ -10,7 +10,7 @@ console.log('API Key:', API_KEY);
 const guideAPIurl = "https://perenual.com/api/species/details/";
 
 function ListingDetailsComponent() {
-  const [passID, setPassID] = useState(() => Math.floor(Math.random() * 500 + 1));
+  const [passID] = useState(() => Math.floor(Math.random() * 500 + 1));
   const [data, setData] = useState(null);
 
   const getPlantica = async () => {
@@ -25,7 +25,24 @@ function ListingDetailsComponent() {
 
   useEffect(() => {
     getPlantica();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [passID]);
+
+  const navigate = useNavigate();
+  const goBack = () => { navigate(-1);}
+
+  useEffect(() => {
+    const detailsButton = document.getElementById('returnButton');
+    if (detailsButton) {
+      detailsButton.addEventListener('click', goBack);
+    }
+    return () => {
+      if (detailsButton) {
+        detailsButton.removeEventListener('click', goBack);
+      }
+    };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div>
@@ -73,6 +90,7 @@ function ListingDetailsComponent() {
                 </div>
               </div>
             </div>
+            <button id='returnButton'>Back to Listings</button>
           </div>
         </div>
       )}
