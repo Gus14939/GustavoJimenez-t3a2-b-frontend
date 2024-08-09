@@ -1,8 +1,7 @@
-.listingDetails {
-
-  padding-top: 8%;
-
-  
+.listingDetails {  
+  padding-top: 7%;
+  text-align: left;
+  display: flex;
   /* Children */
 
   .listingsContainer{
@@ -41,95 +40,99 @@
   .listingContent{
     position: relative;
     text-align: left;
-    margin: 6% 3% 3%;
-  }
-  .listingContent h1{
-    font-size: 1.8em;
-    margin: 5px 0px 0px;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .listingContent h6{
-    font-style: italic;
-    font-size: 1em;
-    margin: 3px 0px 0px;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .listingContent p{
-    text-align: left;
-    font-size: 1em;
-    margin: 20px 0px 35px;
+    margin: 6% 3% 3.5%;
+    
+    h1.title{
+      position: absolute;
+      top: -1.65em;
+      left: -0.7em;
+      font-size: 3.6em;
+  
+    }
+    h1{
+      font-size: 1.8em;
+      margin: 5px 0px 0px;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    h6{
+      font-style: italic;
+      font-size: 1em;
+      margin: 3px 0px 0px;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    p{
+      text-align: left;
+      font-size: 1em;
+      margin: 20px 0px 35px;
+    }
+    button {
+      position: absolute;
+      bottom: -2.4em;
+      left: -1.8em;
+      padding: 0.4em 3em;
+      border-radius: 100px;
+      background-color: var(--actions-red);
+      color: var(--actions-green)
+    }
   }
 
-  .listingDetailsContainer{
-    display: flex;
-    justify-content: space-between;
-  }
+  
+  
+}
 
-  .listingDetailsContainer .listingDetails{
+.listingDetailsContainer{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+
+  /* listingUserDetails */
+  .listingUserDetails{
     text-align: left;
-  }
-  .listingDetails{
     display: flex;
     gap: 10px;
+    p{
+      margin: 0;
+    }
   }
-  .listingDetails p{
-    margin: 1px 0px;
-  }
-
   /* listing icons */
 
   .listingActions{
-  display: flex;
-  align-items:flex-end;
-  gap: 1.5em;
-  text-align: center;
-  }
-  .listingActions img{
-  width: 50px;
-  }
-  .listingActions img:hover{
-    filter:  saturate(96%) hue-rotate(92deg)brightness(340%);
-  }
-  .listingActions p{
-    font-size: 0.6em;
+    display: flex;
+    align-items:flex-end;
+    gap: 1.5em;
     text-align: center;
-    margin: 5px 0 0 0;
-  }
-  .listingMessages{
-  opacity: 0.2;
-  }
-
-  .listingLocation{
-  opacity: 0.2;
-  }
-
-  .listingWishlist{
-  background: none;
-  }
-
-  h1.title{
-    position: absolute;
-    top: -1.65em;
-    left: -0.7em;
-    font-size: 3.6em;
-
-  }
-  button {
-    position: absolute;
-    bottom: -2.4em;
-    left: -1.8em;
-    padding: 0.4em 3em;
-    border-radius: 100px;
-    background-color: var(--actions-red);
-    color: var(--actions-green)
-  }
+    }
+    .listingActions img{
+    width: 50px;
+    }
+    .listingActions img:hover{
+      filter:  saturate(96%) hue-rotate(92deg)brightness(340%);
+    }
+    .listingActions p{
+      font-size: 0.6em;
+      text-align: center;
+      margin: 5px 0 0 0;
+    }
+    .listingMessages{
+    opacity: 0.2;
+    }
+  
+    .listingLocation{
+    opacity: 0.2;
+    }
+  
+    .listingWishlist{
+    background: none;
+    }
 
 }
+
+  

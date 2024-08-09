@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const PostYourPlant = () => {
+  const API_KEY = process.env.REACT_APP_PERENUAL_API_KEY;
   const PlanthoraBkEnd = process.env.REACT_APP_BKND_ROOT
   const PlanthoraURL = `${PlanthoraBkEnd}/posts/postYourPlant`;
 
@@ -48,7 +49,7 @@ const PostYourPlant = () => {
 
   const fetchPlantSuggestions = async (query) => {
     try {
-      const response = await fetch(`https://perenual.com/api/species-list?key=sk-REKG66a5179656da26352&q=${query}`);
+      const response = await fetch(`https://perenual.com/api/species-list?key=${API_KEY}&q=${query}`);
       const data = await response.json();
       setSearchResults(data.data);
     } catch (error) {

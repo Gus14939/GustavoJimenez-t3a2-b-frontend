@@ -1,11 +1,11 @@
 
 import { Link, useParams } from 'react-router-dom';
-import assets from '../images/assets';
+// import assets from '../images/assets';
+import ListingDetailsContainer from './postsComps/ListingDetailsContainer';
 import React, { useEffect, useState } from "react";
 
 
 const API_KEY = process.env.REACT_APP_PERENUAL_API_KEY;
-// console.log('API Key:', API_KEY);
 const guideAPIurl = "https://perenual.com/api/species/details/";
 
 const PlanthoraBkEnd = process.env.REACT_APP_BKND_ROOT
@@ -18,12 +18,12 @@ function ListingDetailsComponent() {
   const [plantId, setPlantId] = useState(null);
 
   const params = useParams();
-  const userId = params.id
-  console.log(userId)
+  const postId = params.id
+  console.log(postId)
 
   const getPlanthoraBkEnd = async () => {
     try {
-      const result = await fetch(`${PlanthoraURL}/${userId}`)
+      const result = await fetch(`${PlanthoraURL}/${postId}`)
         .then((response) => response.json());
 
       setPlanthoraData(result.data);
@@ -75,42 +75,21 @@ function ListingDetailsComponent() {
             <h1 title={perenualData.common_name}>{perenualData.common_name}</h1>
             <h6>{perenualData.scientific_name}</h6>
             <p>{perenualData.description}</p>
+
             <h4>category {planthoraData.category.free}</h4>
-            <div className="listingDetailsContainer">
-              <div className="listingDetails">
-                <div>
-                  <p>User:</p>
-                  <p>Date:</p>
-                  <p>Location:</p>
-                </div>
-                <div>
-                  <p>{planthoraData._id}</p>
-                  <p>{planthoraData.createdAt}</p>
-                  <p>{planthoraData._id}</p>
-                </div>
-              </div>
-              <div className="listingActions">
-                <div className="listingMessages">
-                  <img src={assets.icon_messages} alt="" />
-                  <p>Message <br />
-                  the user</p>
-                </div>
-                <div className="listingLocation">
-                  <img src={assets.icon_location} alt="" />
-                  <p>See map <br />
-                  directions</p>
-                </div>
-                <div className="listingWishlist">
-                  <a href="/"><img src={assets.icon_redHeart} alt="" /></a>
-                  <p>Add to your <br />
-                  wishlist</p>
-                </div>
-              </div>
-            </div>
+            
+            <ListingDetailsContainer 
+              plantId={plantId} 
+              createdAt={planthoraData.createdAt}
+              postId={planthoraData._id}
+            />
+            
             <Link to="/posts/postYourPlant"><button id='returnButton'>Post more plants</button></Link>
           </div>
         </div>
+        
       )}
+
     </div>
   );
 }
