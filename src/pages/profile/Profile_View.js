@@ -2,10 +2,13 @@ import React, { useEffect, useState } from "react";
 import SearchComponent from "../../components/SearchComponent";
 import MyPostsComponent from "../../components/MyPostsComponent";
 
-const Planthora_API = "http://localhost:3333/profile/all";
+const Planthora_API = "http://localhost:3333/profile/66af948772f9c3020306f1b1";
 // const Planthora_API = "https://gustavojimenez-t3a2-b-backend.onrender.com/profiles/all";
 
 const ProfileView = () => {
+  // const PlanthoraBkEnd = process.env.REACT_APP_BKND_ROOT
+  // const PlanthoraURL = `${PlanthoraBkEnd}/profile/66af948772f9c3020306f1b1`;
+
   const [data, setData] = useState([]);
 
   const getUsers = async () => {
@@ -45,18 +48,13 @@ const ProfileView = () => {
       <h1>History</h1>
       history goes here
 
-      {data.length > 0 ? (
-        data.slice(0,2).map((profile) => (
-          <div key={profile._id}>
-            <h3 title={profile.name}>{profile.lastname}</h3>
-            <p>Username: {profile.username}</p>
-            <p>Email: {profile.email}</p>
-            <p>Favorite Plant: {profile.favouritePlant}</p>
+          <div key={data._id}>
+            <h3 title={data.name}>{data.lastname}</h3>
+            <p>Username: {data.username}</p>
+            <p>Email: {data.email}</p>
+            <p>Favorite Plant: {data.favouritePlant}</p>
           </div>
-        ))
-      ) : (
-        <p>Loading...</p>
-      )}
+
     </div>
     </div>
   );

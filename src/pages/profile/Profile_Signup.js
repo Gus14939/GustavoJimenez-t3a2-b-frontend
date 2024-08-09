@@ -3,6 +3,9 @@ import { Link, useNavigate } from "react-router-dom";
 
 
 const ProfileSignup = () => {
+  const PlanthoraBkEnd = process.env.REACT_APP_BKND_ROOT
+  const PlanthoraURL = `${PlanthoraBkEnd}/profile/signup`;
+
   const [formData, setFormData] = useState({
     name: "",
     lastname: "",
@@ -41,7 +44,7 @@ const handleInputChange = (e) => {
     e.preventDefault();
   
     try {
-      const response = await fetch("http://localhost:3333/profile/signup",{
+      const response = await fetch(PlanthoraURL, {
       // console.log("Form Data:", formData); // Log formData for debugging
 
         method: "POST",

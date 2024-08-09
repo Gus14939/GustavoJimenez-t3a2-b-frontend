@@ -10,7 +10,7 @@ console.log('API Key:', API_KEY);
 const guideAPIurl = "https://perenual.com/api/species/details/";
 
 function ListingComponent() {
-  const [passID, setPassID] = useState(() => Math.floor(Math.random() * 500 + 1));
+  const [passID] = useState(() => Math.floor(Math.random() * 500 + 1));
   const [data, setData] = useState(null);
 
   const getPlantica = async () => {
@@ -25,6 +25,7 @@ function ListingComponent() {
 
   useEffect(() => {
     getPlantica();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [passID]);
 
   const truncateText = (text, maxLength) => {

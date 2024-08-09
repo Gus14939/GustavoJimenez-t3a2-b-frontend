@@ -6,7 +6,7 @@ console.log("API Key:", API_KEY);
 const guideAPIurl = "https://perenual.com/api/species/details/";
 
 const PlantOfTheDay = () => {
-  const [passID, setPassID] = useState(() =>
+  const [passID] = useState(() =>
     Math.floor(Math.random() * 500 + 1)
   );
   const [data, setData] = useState(null);
@@ -24,6 +24,7 @@ const PlantOfTheDay = () => {
 
   useEffect(() => {
     getPlantica();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [passID]);
 
   const truncateText = (text, maxLength) => {

@@ -1,12 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const PostYourPlant = () => {
+  const PlanthoraBkEnd = process.env.REACT_APP_BKND_ROOT
+  const PlanthoraURL = `${PlanthoraBkEnd}/posts/postYourPlant`;
+
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     title: '',
     plantName: '',
+    plantInfo:{
+      id: '',
+    },
     description: '',
     category: {
       free: false,
@@ -16,10 +22,6 @@ const PostYourPlant = () => {
   });
 
   const [searchResults, setSearchResults] = useState([]);
-
-  useEffect(() => {
-    console.log("Search Results Updated: ", searchResults);
-  }, [searchResults]);
 
   const handleInputChange = (e) => {
     const { name, value, checked, type } = e.target;
@@ -39,7 +41,7 @@ const PostYourPlant = () => {
       });
     }
 
-    if (name === "plantName" && value.length > 4) {
+    if (name === "plantName" && value.length > 1) {
       fetchPlantSuggestions(value);
     }
   };
@@ -48,20 +50,32 @@ const PostYourPlant = () => {
     try {
       const response = await fetch(`https://perenual.com/api/species-list?key=sk-REKG66a5179656da26352&q=${query}`);
       const data = await response.json();
-
-      setSearchResults(data.data); // This should work fine
-
-      console.log("Fetched Data: ", data.data[0]);
+      setSearchResults(data.data);
     } catch (error) {
       console.error("Failed to fetch plant suggestions:", error);
     }
+  };
+
+  const handleSearchResultClick = (commonName, plantId) => {
+    setFormData({
+      ...formData,
+      plantName: commonName,
+      plantInfo: {
+        ...formData.plantInfo,
+        id: plantId,
+      },
+    });
+    console.log(commonName, plantId)
+
+    // Optionally clear the search results after selection
+    setSearchResults([]);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:3333/posts/postYourPlant', {
+      const response = await fetch(PlanthoraURL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -69,15 +83,11 @@ const PostYourPlant = () => {
         body: JSON.stringify(formData),
       });
 
-      console.log(formData);
-
       if (!response.ok) {
         throw new Error('Failed to post plant');
       }
 
       const data = await response.json();
-      console.log('Posting your plant was successful:', data);
-
       const postId = data.data._id;
 
       navigate(`/posts/postDetails/${postId}`);
@@ -97,15 +107,24 @@ const PostYourPlant = () => {
           </div>
           <div className="field">
             <label>Name of the plant:</label>
-            <input type="text" name="plantName" value={formData.plantName} onChange={handleInputChange} required />
+            <input
+              type="text"
+              name="plantName"
+              value={formData.plantName}
+              onChange={handleInputChange}
+              required
+            />
             {searchResults.length > 0 && (
               <div className='searchResultContainer'>
                 {searchResults.map((result, index) => (
-                  <div className='searchResult' key={index}>
+                  <div
+                    className='searchResult'
+                    onClick={() => handleSearchResultClick(result.common_name, result.id)}
+                    key={index}
+                  >
                     <div className='sr_common_name'>{result.common_name} {result.id}</div>
-                    <div className='sr_scient_name'><b>scientific name:</b> <i>{result.scientific_name[0]}</i></div>
+                    <div className='sr_scient_name'><b>Scientific Name:</b> <i>{result.scientific_name[0]}</i></div>
                   </div>
-                  
                 ))}
               </div>
             )}

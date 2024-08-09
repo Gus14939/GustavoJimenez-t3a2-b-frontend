@@ -1,13 +1,13 @@
 .footer{
     max-width: 1920px; 
-    margin: 0 auto;
+    margin: 1.2em auto;
   }
   .footerContainer{
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 6% 0% 5%;
+    padding: 5% 0% 5%;
   }
   /* .footerContainer{
     display: flex;

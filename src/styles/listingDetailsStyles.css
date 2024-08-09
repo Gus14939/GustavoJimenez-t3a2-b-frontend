@@ -39,6 +39,7 @@
   }
 
   .listingContent{
+    position: relative;
     text-align: left;
     margin: 6% 3% 3%;
   }
@@ -115,16 +116,16 @@
   }
 
   h1.title{
-    font-size: 3.6em;
     position: absolute;
-    top: -50px;
-    left: -10px;
+    top: -1.65em;
+    left: -0.7em;
+    font-size: 3.6em;
 
   }
   button {
     position: absolute;
-    bottom: -1em;
-    left: -0.5em;
+    bottom: -2.4em;
+    left: -1.8em;
     padding: 0.4em 3em;
     border-radius: 100px;
     background-color: var(--actions-red);

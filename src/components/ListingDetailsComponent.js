@@ -1,64 +1,81 @@
 
+import { Link, useParams } from 'react-router-dom';
 import assets from '../images/assets';
 import React, { useEffect, useState } from "react";
-import { useNavigate } from 'react-router-dom';
 
 
-// const API_KEY = process.env.REACT_APP_PERENUAL_API_KEY;
-const API_KEY = "sk-REKG66a5179656da26352";
-console.log('API Key:', API_KEY);
+const API_KEY = process.env.REACT_APP_PERENUAL_API_KEY;
+// console.log('API Key:', API_KEY);
 const guideAPIurl = "https://perenual.com/api/species/details/";
 
-function ListingDetailsComponent() {
-  const [passID] = useState(() => Math.floor(Math.random() * 500 + 1));
-  const [data, setData] = useState(null);
+const PlanthoraBkEnd = process.env.REACT_APP_BKND_ROOT
+const PlanthoraURL = `${PlanthoraBkEnd}/posts/postDetails`;
 
-  const getPlantica = async () => {
+
+function ListingDetailsComponent() {
+  const [planthoraData, setPlanthoraData] = useState(null);
+  const [perenualData, setPerenualData] = useState(null);
+  const [plantId, setPlantId] = useState(null);
+
+  const params = useParams();
+  const userId = params.id
+  console.log(userId)
+
+  const getPlanthoraBkEnd = async () => {
     try {
-      let result = await fetch(`${guideAPIurl}${passID}?key=${API_KEY}`)
+      const result = await fetch(`${PlanthoraURL}/${userId}`)
         .then((response) => response.json());
-      setData(result);
+
+      setPlanthoraData(result.data);
+      console.log("Plant ID from planthoraData:", result.data.plantInfo.id);
+
+      // I set plantId to fetch info from Perenual API
+      setPlantId(result.data.plantInfo.id);
+
     } catch (error) {
-      console.error("Error fetching data:", error);
+      console.error("Error fetching planthoraData:", error);
+    }
+  };
+
+  const getPerenualAPI = async () => {
+    if (!plantId) return; // this is to wait ofr plantId
+    try {
+      let result = await fetch(`${guideAPIurl}${plantId}?key=${API_KEY}`)
+        .then((response) => response.json());
+      setPerenualData(result);
+    } catch (error) {
+      console.error("Error fetching perenualData:", error);
     }
   };
 
   useEffect(() => {
-    getPlantica();
+    getPlanthoraBkEnd();
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [passID]);
-
-  const navigate = useNavigate();
-  const goBack = () => { navigate(-1);}
+  },[]);
 
   useEffect(() => {
-    const detailsButton = document.getElementById('returnButton');
-    if (detailsButton) {
-      detailsButton.addEventListener('click', goBack);
-    }
-    return () => {
-      if (detailsButton) {
-        detailsButton.removeEventListener('click', goBack);
-      }
-    };
+    getPerenualAPI();
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [plantId]);
+
 
   return (
     <div>
-      {data && (
+      {perenualData && (
         <div className="listing">
           <div className="imgContainer">
             <img
-              src={data.default_image.small_url}
-              alt={data.scientific_name}
+              src={perenualData.default_image?.medium_url || perenualData.default_image?.original_url}
+              alt={perenualData.scientific_name}
+              title={perenualData.scientific_name}
             />
           </div>
           <div className="listingContent">
-          <h1 className='title'>Plant details</h1>
-            <h1 title={data.common_name}>{data.common_name}</h1>
-            <h6>{data.scientific_name}</h6>
-            <p>{data.description}</p>
+            <h1 className='title'>Plant details</h1>
+            <h1 title={perenualData.common_name}>{perenualData.common_name}</h1>
+            <h6>{perenualData.scientific_name}</h6>
+            <p>{perenualData.description}</p>
+            <h4>category {planthoraData.category.free}</h4>
             <div className="listingDetailsContainer">
               <div className="listingDetails">
                 <div>
@@ -67,9 +84,9 @@ function ListingDetailsComponent() {
                   <p>Location:</p>
                 </div>
                 <div>
-                  <p>**user**</p>
-                  <p>**dateCreated**</p>
-                  <p>**dateCreated**</p>
+                  <p>{planthoraData._id}</p>
+                  <p>{planthoraData.createdAt}</p>
+                  <p>{planthoraData._id}</p>
                 </div>
               </div>
               <div className="listingActions">
@@ -90,7 +107,7 @@ function ListingDetailsComponent() {
                 </div>
               </div>
             </div>
-            <button id='returnButton'>Back to Listings</button>
+            <Link to="/posts/postYourPlant"><button id='returnButton'>Post more plants</button></Link>
           </div>
         </div>
       )}
