@@ -18,7 +18,7 @@ const Navbar = () => {
         <div className="navLinks">
           <ul>
             <li>
-              <NavLink to={"/"}>Home</NavLink>
+              <NavLink className="topLink_a" to={"/"}>Home</NavLink>
             </li>
             <li>
               <NavLink to={"/profile"}>Profile</NavLink>
@@ -30,11 +30,14 @@ const Navbar = () => {
               <NavLink to={"/profile/signup"}>Signup</NavLink>
             </li>
             <li>
+              <NavLink to={"/posts/postYourPlant"}>Post Your Plant</NavLink>
+            </li>
+            {/*<li>
               <NavLink to={"/about"}>About</NavLink>
             </li>
             <li>
               <NavLink to={"/faq"}>FAQ</NavLink>
-            </li>
+            </li>*/}
           </ul>
         </div>
       </div>

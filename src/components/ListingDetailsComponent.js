@@ -72,9 +72,10 @@ function ListingDetailsComponent() {
           </div>
           <div className="listingContent">
             <h1 className='title'>Plant details</h1>
-            <h1 title={perenualData.common_name}>{perenualData.common_name}</h1>
+            <h1>{planthoraData.title}</h1>
+            <h3>{perenualData.common_name}</h3>
             <h6>{perenualData.scientific_name}</h6>
-            <p>{perenualData.description}</p>
+            <p>{planthoraData.description}</p>
 
             <h4>category {planthoraData.category.free}</h4>
             

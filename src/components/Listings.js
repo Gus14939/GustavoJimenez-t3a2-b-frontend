@@ -6,6 +6,8 @@ const Listings = () => {
     <div className='listings'>
       <div className='listingsContainer'>
         <ListingComponent />
+        <ListingComponent />
+        <ListingComponent />
       </div>
     </div>
   );

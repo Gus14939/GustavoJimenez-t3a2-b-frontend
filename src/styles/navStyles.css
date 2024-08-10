@@ -7,61 +7,48 @@
   height: 100px;
   z-index: 100;
   position: absolute;
-}
-.quickfix{ /* not doing much at the moment */
-  position: relative;
-  margin: 0 auto;
-}
-.topBarContainer{
-  position: relative;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0;
-  width: 90%;
-}
-.topBar .logo img{
-  width: 15em;  
-}
-.topBar .topSearch{
-  width: 3.5em; 
-}
-.navLinks ul{
-  list-style-type: none;
-  display: flex;
-  gap: 5px
-}
 
-.navLinks a{
-  text-decoration: none;
-  color: var(--actions-red);
-  font-size: 1.5em;
-}
-
-.topBarContainer a:hover{
-  filter: brightness(110%) saturate(250%) hue-rotate(28deg);
-}
-.topSearch a:hover{
-  filter: brightness(110%) saturate(250%) hue-rotate(28deg);
-} 
+  .logo img{
+    width: 15em;  
+  }
+  .topSearch{
+    width: 3.5em; 
+  }
+  
+  .topBarContainer{
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    width: 90%;
+  
+  }
+  .topBarContainer a:hover{
+    filter: brightness(110%) saturate(250%) hue-rotate(28deg);
+  }
+  .topSearch a:hover{
+    filter: brightness(110%) saturate(250%) hue-rotate(28deg);
+  } 
 
 
-/* NAV */
-/* .topNav{
-} */
-/* .navLinks a{
-  text-decoration: none;
-  color: var(--actions-red);
-  font-size: 1.5em;
 }
-.navLinks a:hover{
-  text-decoration: none;
-  color: var(--actions-green);
-  font-size: 1.5em;
+
+
+.navLinks {
+  ul{
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+    font-size: 1.5em;
+    font-weight: 500;
+  }
+  ul li a {
+    color: var(--primary-white);
+  }
+  ul li a:hover{
+    text-decoration: none;
+    color: var(--actions-red);
+  }
 }
-.navLinks ul{
-  list-style-type: none;
-  display: flex;
-  gap: 5px
-} */

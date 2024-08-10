@@ -58,6 +58,16 @@
       overflow: hidden;
       text-overflow: ellipsis;
     }
+    h3{
+      font-style: italic;
+      font-size: 1.4em;
+      margin: 10px 0px 0px;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
     h6{
       font-style: italic;
       font-size: 1em;
