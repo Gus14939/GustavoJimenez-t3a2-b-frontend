@@ -103,15 +103,42 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
-/* to be replaced */
-.searchies{
-  width: 100%;
+.homeInteractions {
+  width: 80%;
+  margin: 0 auto;
   margin-top: 130px;
+  display: flex;
+  gap: 4%;
+  align-content:baseline;
+}
+/* to be replaced */
+.homePlantSearch{
+  width: 48%;
   text-align: center;
 }
-.searchies input{
-  width: 60%;
+.postYourPlant_homeBtn{
+  width: 48%;
+  padding: 16px 30px;
+  font-size: 1.5em;
+  color: var(--actions-red);
+  border: none;
+  border-radius: 100px;
+  background: url("../images/icon_exchange.svg") no-repeat right 25px center;
+  background-color: var(--primary-white);
+  background-size: 4.5%;
+  font-family: 'Rubik', 'sans-serif';
+  font-weight: 900;
+  transition: background-color 0.4s;
+  text-decoration: none;
+  text-align: left;
+}
+
+.postYourPlant_homeBtn:hover{
+  background-color: var(--primary-limeGreen);
+  cursor: pointer;
+}
+.homePlantSearch input{
+  width: 100%;
   padding: 20px 30px;
   font-size: 1.3em;
   color: var(--actions-red);
@@ -121,13 +148,13 @@
   background-size: 4.5%;
   transition: background-size 0.2s;
 }
-.searchies input:focus{
+.homePlantSearch input:focus{
   background: var(--primary-limeGreen) url("../images/icon_search_red.svg") no-repeat right 25px center;
   background-size: 5%;
   border: none;
   outline: 0;
 }
-.searchies input::placeholder {
+.homePlantSearch input::placeholder {
   font-size: 1.2em;
   color: var(--actions-red)
 }
