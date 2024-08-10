@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const PostYourPlant = () => {
+  const [freeChecked, setFreeChecked] = useState(false);
+  const [swapChecked, setSwapChecked] = useState(false);
+  const [wantedChecked, setWantedChecked] = useState(false);
+
   const API_KEY = process.env.REACT_APP_PERENUAL_API_KEY;
-  const PlanthoraBkEnd = process.env.REACT_APP_BKND_ROOT
+  const PlanthoraBkEnd = process.env.REACT_APP_BKND_ROOT;
   const PlanthoraURL = `${PlanthoraBkEnd}/posts/postYourPlant`;
 
   const navigate = useNavigate();
@@ -11,7 +15,7 @@ const PostYourPlant = () => {
   const [formData, setFormData] = useState({
     title: '',
     plantName: '',
-    plantInfo:{
+    plantInfo: {
       id: '',
     },
     description: '',
@@ -28,22 +32,30 @@ const PostYourPlant = () => {
     const { name, value, checked, type } = e.target;
 
     if (type === 'checkbox') {
-      setFormData({
-        ...formData,
+      setFormData((prevData) => ({
+        ...prevData,
         category: {
-          ...formData.category,
+          ...prevData.category,
           [name]: checked,
         },
-      });
-    } else {
-      setFormData({
-        ...formData,
-        [name]: value,
-      });
-    }
+      }));
 
-    if (name === "plantName" && value.length > 1) {
-      fetchPlantSuggestions(value);
+      if (name === 'free') {
+        setFreeChecked(checked);
+      } else if (name === 'swap') {
+        setSwapChecked(checked);
+      } else if (name === 'wanted') {
+        setWantedChecked(checked);
+      }
+    } else {
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: value,
+      }));
+
+      if (name === 'plantName' && value.length > 1) {
+        fetchPlantSuggestions(value);
+      }
     }
   };
 
@@ -53,22 +65,19 @@ const PostYourPlant = () => {
       const data = await response.json();
       setSearchResults(data.data);
     } catch (error) {
-      console.error("Failed to fetch plant suggestions:", error);
+      console.error('Failed to fetch plant suggestions:', error);
     }
   };
 
   const handleSearchResultClick = (commonName, plantId) => {
-    setFormData({
-      ...formData,
+    setFormData((prevData) => ({
+      ...prevData,
       plantName: commonName,
       plantInfo: {
-        ...formData.plantInfo,
+        ...prevData.plantInfo,
         id: plantId,
       },
-    });
-    console.log(commonName, plantId)
-
-    // Optionally clear the search results after selection
+    }));
     setSearchResults([]);
   };
 
@@ -97,6 +106,34 @@ const PostYourPlant = () => {
     }
   };
 
+  useEffect(() => {
+    if (freeChecked || swapChecked) {
+      setWantedChecked(false);
+      setFormData((prevData) => ({
+        ...prevData,
+        category: {
+          ...prevData.category,
+          wanted: false,
+        },
+      }));
+    }
+  }, [freeChecked, swapChecked]);
+
+  useEffect(() => {
+    if (wantedChecked) {
+      setFreeChecked(false);
+      setSwapChecked(false);
+      setFormData((prevData) => ({
+        ...prevData,
+        category: {
+          ...prevData.category,
+          free: false,
+          swap: false,
+        },
+      }));
+    }
+  }, [wantedChecked]);
+
   return (
     <div className="noHomeContainer">
       <div className="userForms">
@@ -123,7 +160,7 @@ const PostYourPlant = () => {
                     onClick={() => handleSearchResultClick(result.common_name, result.id)}
                     key={index}
                   >
-                    <div className='sr_common_name'>{result.common_name} {result.id}</div>
+                    <div className='sr_common_name'>{result.common_name}</div>
                     <div className='sr_scient_name'><b>Scientific Name:</b> <i>{result.scientific_name[0]}</i></div>
                   </div>
                 ))}
@@ -137,15 +174,15 @@ const PostYourPlant = () => {
           <div className="field">
             <div className="tradeCategory">
               <label className="checkboxes">
-                <input type="checkbox" name="free" checked={formData.category.free} onChange={handleInputChange} />
+                <input type="checkbox" name="free" checked={freeChecked} onChange={handleInputChange} />
                 Free
               </label>
               <label className="checkboxes">
-                <input type="checkbox" name="swap" checked={formData.category.swap} onChange={handleInputChange} />
+                <input type="checkbox" name="swap" checked={swapChecked} onChange={handleInputChange} />
                 Swap
               </label>
               <label className="checkboxes">
-                <input type="checkbox" name="wanted" checked={formData.category.wanted} onChange={handleInputChange} />
+                <input type="checkbox" name="wanted" checked={wantedChecked} onChange={handleInputChange} />
                 Wanted
               </label>
             </div>

@@ -22,7 +22,7 @@
     border-radius: 100px;
     background-color: var(--primary-white);
     background-size: 4.5%;
-    transition: background-color 1s;
+    transition: background-color 0.6s;
   }
   input:focus, textarea:focus{
     background-color: var(--primary-limeGreen);
