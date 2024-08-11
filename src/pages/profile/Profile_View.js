@@ -37,15 +37,17 @@ const ProfileView = () => {
         <MyPostsComponent />
         <MyPostsComponent />
       </div>
-      all my posts should be here
 
       <h1>Wishlist</h1>
-      wishlist is here
-      <div className='searchies'>
+      <MyPostsComponent />
+      <MyPostsComponent />
+
+      <h1>History</h1>
+      {/*
+        <div className='searchies'>
         <SearchComponent />
       </div>
 
-      <h1>History</h1>
       history goes here
 
           <div key={data._id}>
@@ -54,7 +56,7 @@ const ProfileView = () => {
             <p>Email: {data.email}</p>
             <p>Favorite Plant: {data.favouritePlant}</p>
           </div>
-
+          */}
     </div>
     </div>
   );

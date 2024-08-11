@@ -562,36 +562,102 @@ The code leverages appropriate libraries such as Mongoose for MongoDB interactio
 GIT Repos
 - Fontend 
   - https://github.com/Gus14939/gustavojimenez-t3a2-b-frontend 
+  ![git - Frontend](./docs/partB/git-backend.png)
+  ![git - Frontend branches](./docs/partB/git-backendBranches.png)
 - Backend 
   - https://github.com/Gus14939/GustavoJimenez-t3a2-b-backend  
-  
+  ![git - Backend](./docs/partB/git-backend.png)
+  ![git - Backend branches](./docs/partB/git-backendBranches.png)
 ---
 # 4. Ability to work in a team  
 
+This was a solo project. the expectation was to touch all areas of the development process making me the sole contributor and project owner. However, I tried approaching it with as a team and strategic planning. I delegated tasks across different days, similar to how one might delegate responsibilities among team members, ensuring that each aspect of the project was given the attention it deserved to drive its success.
+
+For work management, I utilised  Trello to organize the project's workflow. The tasks were divided into weeks for Part-B, with "not fully completed" and "review testing" give all the many issues this project pressented and to track the progress of the succesful tasks.
+
+It was demonstrated that the application of a recognised project management methodology. Effective task delegation, even within a solo project.
+
+### [Trello - App development](https://trello.com/b/cezps7am/planthera-full-stack-app-part-b)
 
 ---
 # 5. A working application that meets client & user needs  
 
+Initially the backend part of the app was locally tested and later deployed to deployed on MongoDB and Render.
+while the database and mongoose actioned without issues.
+
+Frontend was develop and tested locally. However, CORS caused too many issues and continue work using the deployed database was not possible.
+
+All other develpment was successful when keeping it local.
+
+Unfortunately the App has not been completed and only a few proposed features work locally
 
 ---
 # 6. Deploying the application to a cloud hosting service  
 
+disregarding the issues with connecting backend and frontend, deployment of each was succesful and can be accessed.
 
+Deployment of the database was on MongoDB
+Deployment of the backend was on Render
+Deployment of the frontend was on Netlify
+
+#### These are the production link of the app:
+- Fontend 
+  - https://planthora.netlify.app/  
+- Backend 
+  - https://gustavojimenez-t3a2-b-backend.onrender.com  
+
+![Mongo Platform](./docs/partB/DeployMongo.png)
+
+![Mongo Platform](./docs/partB/DeployRender.png)
+
+![Mongo Platform](./docs/partB/DeployNetlify.png)
 ---
 # 7. An application with an intuitive user interface  
 
+visually, the app mostly looks and behaves as the proposed static designs.
+s.
+
+The idea was to visually engage the user by using the realstate mostly for big images of the plants and the information about the plants.
+
+while a few aspect of the site were not achieved. the website remains intuitive to navigate. 
+
+![deployed site UI](./docs/partB/homepage.png)
 
 ---
 # 8. Evidence of user testing  
+### Manual unit test website
+
+#### Manual testing of the develpment stage
+![Testing Manual Development](./docs/partB/testing-manual-Development.png)
+
+
+#### Manual testing of the production stage
+![Testing Manual Development](./docs/partB/testing-manual-Production.png)
 
 
 ---
 # 9. Utilising a formal testing framework  
 
+For this project, Jest was used to programmatically unit test Planthora app. Jest is a widely-used for JavaScript applications.
+
+In this project, I conducted a series of 9 tests, focusing primarily on the backend functionality. These tests were essential for verifying that the core components, such as user authentication and profile management, operated correctly.
+
+Here are the terminal results for each test case:
+
+![Testing Manual Development](./docs/partB/testing.png)
+
 
 ---
 # 10. URL to the deployed website  
 
+Unfortunately given the issues with CORS the deployed site does not operate as expected
+
+# https://planthora.netlify.app/  
 
 ---
+
 # 11. GitHub repositories 
+- Fontend 
+  - https://github.com/Gus14939/gustavojimenez-t3a2-b-frontend 
+- Backend 
+  - https://github.com/Gus14939/GustavoJimenez-t3a2-b-backend  

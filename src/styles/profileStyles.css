@@ -93,3 +93,10 @@
   background: none;
   line-height: 40px;
 }
+.trun{
+  display: -webkit-box;
+  -webkit-box-orient: vertical; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+}

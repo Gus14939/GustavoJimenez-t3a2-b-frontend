@@ -59,7 +59,7 @@ function MyPostsComponent() {
           <div className="myPostsContent">
             <h1 title={data.common_name}>{data.common_name}</h1>
             <h6>{data.scientific_name}</h6>
-            <p>{data.description}</p>
+            <p className='trun'>{data.description}</p>
               
               <div className="myPostsActions">
                 <div className="remove">
