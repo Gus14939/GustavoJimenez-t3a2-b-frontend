@@ -577,7 +577,16 @@ For work management, I utilised  Trello to organize the project's workflow. The 
 
 It was demonstrated that the application of a recognised project management methodology. Effective task delegation, even within a solo project.
 
-### [Trello - App development](https://trello.com/b/cezps7am/planthera-full-stack-app-part-b)
+### [Trello - App development live link](https://trello.com/b/cezps7am/planthera-full-stack-app-part-b)
+
+here are some images of Trello
+![Trello 01](./docs/partB/trello/Trello_01.png)
+![Trello 01](./docs/partB/trello/Trello_02.png)
+![Trello 01](./docs/partB/trello/Trello_03.png)
+![Trello 01](./docs/partB/trello/Trello_04.png)
+![Trello 01](./docs/partB/trello/Trello_05.png)
+
+
 
 ---
 # 5. A working application that meets client & user needs  
